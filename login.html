@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Order System</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('images/back.png'); /* Replace 'food-background.jpg' with your actual image file */
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, Helvetica, sans-serif;
+            height: 100vh;
+        }
+
+        .login-signup-container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            margin: 0 auto;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .login-signup-container h2 {
+            margin-bottom: 20px;
+        }
+
+        .login-signup-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login-signup-container button {
+            background-color: #FF5722;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .login-signup-container button:hover {
+            background-color: #E64A19;
+        }
+
+        .switch-form {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-signup-container" id="login-container">
+        <h2>Login to Food Order System</h2>
+        <form action="login.php" method="POST"> <!-- Replace 'login.php' with your actual login script -->
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p class="switch-form">Don't have an account? <a href="#" onclick="toggleForm('signup-container')">Sign Up</a></p>
+    </div>
+
+    <div class="login-signup-container" id="signup-container" style="display: none;">
+        <h2>Sign Up for Food Order System</h2>
+        <form action="signup.php" method="POST"> <!-- Replace 'signup.php' with your actual signup script -->
+            <input type="text" name="fullname" placeholder="Full Name" required>
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <p class="switch-form">Already have an account? <a href="#" onclick="toggleForm('login-container')">Login</a></p>
+    </div>
+
+    <script>
+        function toggleForm(formId) {
+            document.getElementById('login-container').style.display = 'none';
+            document.getElementById('signup-container').style.display = 'none';
+            document.getElementById(formId).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
